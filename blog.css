@@ -1,0 +1,90 @@
+/*fonts: roboto,rubik*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Rubik:wght@300;400;500;600;800;900&display=swap");
+
+:root {
+  --font-roboto: "Roboto";
+  --font-rubik: "Rubik";
+  --secondary-color: #0d317a;
+}
+
+body {
+  font-family: var(--font-roboto) !important;
+}
+
+.card-post {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px !important;
+  border: none !important;
+}
+
+.card-post .card-title {
+  font-family: var(--font-rubik) !important;
+  font-size: 0.7rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+.card-title a {
+  color: var(--secondary-color) !important;
+}
+.card-title a:hover {
+  text-decoration: none;
+}
+.card-post .card-body-text span {
+  color: #333;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+.card-post .card-body-text h4 {
+  color: #333;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+.card-post .card-footer {
+  background: #fff !important;
+
+  border: none;
+}
+.card-post .card-footer hr {
+  margin-top: 0rem !important;
+}
+.card-post .card-footer .card-link {
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  font-size: 0.9rem;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+.card-post .card-footer .card-link:hover {
+  transition: 0.3s ease-in;
+  color: #fff;
+  background: var(--secondary-color);
+}
+
+/*Right side */
+.recent-article-container .recent-article-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+}
+
+.recent-article-container .recent-article-text:hover {
+  color: var(--secondary-color);
+}
+.recent-article-container .card-date-container a {
+  text-decoration: none;
+  color: #333;
+  font-family: var(--font-rubik);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  color: var(--secondary-color);
+}
+.recent-articles-title {
+  margin-top: 0.5rem;
+  font-family: var(--font-rubik);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
