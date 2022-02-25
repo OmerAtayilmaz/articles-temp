@@ -60,7 +60,9 @@ body {
   color: #fff;
   background: var(--secondary-color);
 }
-
+.post-extra-hr {
+  padding: 20px;
+}
 /*Right side */
 .recent-article-container .recent-article-text {
   font-size: 0.9rem;

@@ -23,6 +23,17 @@
 /*=================================
 	1. HEADER
 =================================*/
+:root {
+  --primary-blue: #0d317a;
+}
+/* active the code in comment line for activate Lucida font */
+/* @font-face {
+  font-family: "Lucida Sans";
+  src: url("./../fonts/LSANS.TTF");
+}
+* {
+  font-family: "Lucida Sans";
+} */
 .bg-fix {
   background-attachment: fixed;
   background-size: cover;
@@ -50,7 +61,7 @@
   padding: 0;
 }
 .secondary-menu .btn-link:hover {
-  color: var(--primary);
+  color: var(--primary-blue);
 }
 .secondary-menu .secondary-inner {
   display: inline-block;
@@ -1021,11 +1032,12 @@
   color: #fff;
 }
 .header-transparent .secondary-menu .btn-link:hover {
-  color: var(--primary);
+  color: var(--primary-blue);
 }
 .header-transparent .navbar-toggler span {
   background-color: #fff;
 }
+
 .header-transparent .is-fixed .menu-bar {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.9);
@@ -1145,6 +1157,24 @@
   display: table;
   width: 100%;
   text-align: left;
+  background-color: black;
+}
+.page-banner-img {
+  height: 300px;
+  background-size: cover;
+  object-fit: cover;
+  display: table;
+  width: 100%;
+  text-align: left;
+  position: absolute;
+  opacity: 0.4;
+}
+.banner-container {
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  top: 50%;
 }
 .page-banner .container {
   display: table;
@@ -1170,7 +1200,8 @@
   .page-banner-entry {
     vertical-align: middle;
   }
-  .page-banner {
+  .page-banner,
+  .page-banner-img {
     padding-bottom: 0;
     height: 200px;
   }
@@ -1189,6 +1220,53 @@
 }
 .ttr-post-title {
   margin-bottom: 5px;
+}
+.post-title-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+.media-post-text {
+  color: var(--primary-blue);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.media-post-text-img {
+  margin-right: 5px;
+}
+@media only screen and (max-width: 992px) {
+  .post-title-text {
+    font-size: 0.7rem;
+  }
+  .media-post-text {
+    font-size: 0.7rem !important;
+  }
+}
+.post-video iframe {
+  width: 100%;
+  height: 400px;
+  border: 3px solid var(--primary-blue);
+  box-shadow: rgba(24, 149, 252, 0.35) 0px 3px 8px;
+}
+.post-image-sm {
+  display: flex;
+  justify-content: center;
+}
+.post-image-sm img {
+  width: 50%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--primary-blue);
+  box-shadow: rgba(24, 149, 252, 0.35) 0px 3px 8px;
+}
+.post-image-md img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--primary-blue);
+  box-shadow: rgba(24, 149, 252, 0.35) 0px 3px 8px;
 }
 .ttr-post-title .post-title {
   margin-top: 20px;
@@ -1233,6 +1311,10 @@
 }
 .ttr-post-text p:last-child {
   margin: 0;
+}
+.ttr-post-media-img {
+  width: 200px;
+  height: 143px;
 }
 @media only screen and (max-width: 1200px) {
   .ttr-post-meta .d-flex {
@@ -1939,6 +2021,14 @@ button.back-to-top {
   font-family: roboto;
   line-height: 34px;
 }
+.details-post-title {
+  font-size: 2rem;
+  margin-top: 0px;
+  margin-bottom: 6px;
+  font-family: roboto;
+  line-height: 40px;
+  color: var(--primary-blue);
+}
 .recent-news .info-bx {
   padding: 20px;
   border: 1px solid #eeeeee;
@@ -1951,10 +2041,13 @@ button.back-to-top {
   margin-right: 5px;
 }
 .post-extra {
-  display: flex;
-  border-top: 1px solid #eeeeee;
-  padding-top: 20px;
-  margin-top: 20px;
+  text-align: center !important;
+}
+/*media-post*/
+.card {
+  margin: 5px !important;
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .media-post {
   border-bottom: 1px solid #eeeeee;
@@ -1965,22 +2058,36 @@ button.back-to-top {
 .post-tag {
   margin-bottom: 5px;
 }
-.media-post li {
-  list-style: none;
-  display: inline-block;
+.media-post {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.media-post-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -3rem;
+  margin-bottom: -1.8rem;
+}
+.media-post-img img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50% !important;
+  border: 4px solid #fff;
+}
+.media-post div {
+  display: inline-flex;
   font-size: 13px;
   text-transform: capitalize;
-
-  margin-right: 5px;
 }
-.media-post li a {
-  color: var(--primary);
+.media-post div a {
+  color: var(--primary-blue);
   vertical-align: middle;
+  margin-left: 5px;
 }
-.media-post li a i {
-  margin-right: 5px;
-  font-size: 13px;
-}
+
 .post-tag li {
   display: inline-block;
   font-size: 14px;
@@ -1988,7 +2095,26 @@ button.back-to-top {
   list-style: none;
 }
 .post-title a {
-  color: #061538;
+  color: var(--primary-blue);
+
+  font-size: 1.1rem;
+}
+hr {
+  margin: 8px;
+  border-color: #ededed;
+}
+.post-extra-hr {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.post-text {
+  font-size: 0.8rem;
+  height: 120px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  display: block;
 }
 .blog-post p,
 .recent-news p {
@@ -2036,7 +2162,7 @@ button.back-to-top {
   font-size: 13px;
 }
 .cours-star li.active {
-  color: var(--primary);
+  color: var(--primary-blue);
 }
 .cours-more-info .price,
 .cours-more-info .review {
@@ -2088,7 +2214,7 @@ button.back-to-top {
 .recent-news-carousel .owl-nav .owl-prev,
 .testimonial-carousel .owl-nav .owl-next,
 .testimonial-carousel .owl-nav .owl-prev {
-  background-color: var(--primary);
+  background-color: var(--primary-blue);
   margin: 0 5px !important;
 }
 .courses-carousel .owl-nav .owl-next:hover,
@@ -2097,7 +2223,7 @@ button.back-to-top {
 .recent-news-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover,
 .testimonial-carousel .owl-nav .owl-prev:hover {
-  background-color: var(--sc-primary);
+  background-color: var(--primary-blue);
 }
 /* Online Cours */
 .online-cours h2 {
@@ -2154,7 +2280,7 @@ button.back-to-top {
   margin-top: 0;
   line-height: 32px;
   padding-left: 10px;
-  border-left: 5px solid var(--primary);
+  border-left: 5px solid var(--primary-blue);
 }
 .heading-bx.left p {
   max-width: 500px;
@@ -2216,7 +2342,7 @@ button.back-to-top {
 }
 .event-time {
   color: #fff;
-  background-color: var(--primary);
+  background-color: var(--primary-blue);
   text-align: center;
   padding: 15px 10px;
   border-radius: 4px;
@@ -2271,7 +2397,7 @@ button.back-to-top {
 .upcoming-event-carousel.owl-btn-1 .owl-next {
   margin: 0 100px !important;
   font-size: 20px;
-  background-color: var(--primary);
+  background-color: var(--primary-blue);
   width: 50px;
   height: 50px;
   line-height: 50px;
@@ -2279,7 +2405,7 @@ button.back-to-top {
 }
 .upcoming-event-carousel.owl-btn-1 .owl-prev:hover,
 .upcoming-event-carousel.owl-btn-1 .owl-next:hover {
-  background-color: var(--sc-primary);
+  background-color: var(--primary-blue);
 }
 /* Testimonials */
 .testimonial-bx {
@@ -2484,7 +2610,7 @@ button.back-to-top {
 .contact-bx .focused .input-group label {
   top: -8px;
   font-size: 10px;
-  color: var(--primary);
+  color: var(--primary-blue);
 }
 .contact-bx .input-group textarea.form-control {
   height: 120px;
@@ -2674,7 +2800,7 @@ button.back-to-top {
 .course-info-list ul li a.active,
 .course-info-list ul li a:hover {
   color: #fff;
-  background: var(--primary);
+  background: var(--primary-blue);
 }
 .course-info-list ul li a i {
   margin-right: 10px;
@@ -2702,7 +2828,7 @@ button.back-to-top {
 .course-features li i {
   margin-right: 10px;
   font-size: 16px;
-  color: var(--primary);
+  color: var(--primary-blue);
 }
 .course-features li .label {
   width: 60%;
@@ -2729,7 +2855,7 @@ button.back-to-top {
 .curriculum-list h5 {
   font-size: 14px;
   font-weight: 500;
-  color: var(--primary);
+  color: var(--primary-blue);
   margin-bottom: 0px;
   text-transform: uppercase;
 }
@@ -2806,7 +2932,7 @@ button.back-to-top {
 }
 .bar-container [class*="bar"] {
   height: 8px;
-  background: var(--primary);
+  background: var(--primary-blue);
 }
 /* MemberShip */
 .pricingtable-inner {
@@ -2956,7 +3082,7 @@ button.back-to-top {
   padding: 10px 30px;
 }
 .profile-tabnav .nav li a.active {
-  background-color: var(--primary);
+  background-color: var(--primary-blue);
   color: #fff;
   border-radius: 0;
 }
@@ -2980,6 +3106,9 @@ button.back-to-top {
 }
 .courses-filter .action-card {
   margin-bottom: 30px;
+}
+.action-card {
+  height: 600px;
 }
 .courses-filter {
   padding: 30px 30px 0 30px;
@@ -3073,7 +3202,7 @@ button.back-to-top {
   width: 20px;
   height: 20px;
   background-color: transparent;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--primary-blue);
   top: 2px;
 }
 .custom-control-label:after {
@@ -3082,7 +3211,7 @@ button.back-to-top {
   top: 2px;
 }
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: var(--primary);
+  background-color: var(--primary-blue);
 }
 .account-container .form-forget {
   display: flex;
@@ -3103,7 +3232,7 @@ button.back-to-top {
   margin-right: 10px;
 }
 .account-form .heading-bx p a {
-  color: var(--primary);
+  color: var(--primary-blue);
   text-decoration: underline;
   padding-bottom: 0px;
 }
@@ -3406,5 +3535,63 @@ button.back-to-top {
   .online-cours h2 {
     font-size: 24px;
     margin-bottom: 5px;
+  }
+}
+/*Author information*/
+.author-detail-card {
+  width: 50%;
+  border: 1px solid var(--primary-blue);
+  box-shadow: rgba(24, 149, 252, 0.35) 0px 3px 8px;
+}
+.author-detail-img-box img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-blue);
+}
+.author-detail-name-box {
+  margin-top: 0.8rem;
+}
+.author-detail-name {
+  font-weight: 600;
+}
+.author-detail-membership {
+  font-weight: lighter;
+  font-size: 0.9rem;
+  letter-spacing: -0.5px;
+}
+
+.author-detail-line {
+  margin-top: 5px;
+  width: 75%;
+  border-radius: 5px;
+  height: 3px;
+  background: linear-gradient(to right, #3675f5, #185adf);
+}
+.custom-sm-icon {
+  margin: 2px;
+  padding: 0;
+  font-size: 1rem;
+  width: 60px;
+  height: 30px;
+  background: white !important;
+  border: 1px solid #333;
+}
+.custom-sm-icon:hover {
+  background: linear-gradient(to right, #3675f5, #185adf) !important;
+  border: 1px solid transparent;
+}
+@media only screen and (max-width: 768px) {
+  .custom-sm-icon {
+    width: 100%;
+    font-size: 1rem;
+    height: 30px;
+    background: white !important;
+    border: 1px solid #333;
+  }
+  .author-detail-sm-icons {
+    display: flex;
+    flex-direction: column;
   }
 }
