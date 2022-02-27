@@ -1250,7 +1250,6 @@
 }
 .post-image-sm {
   display: flex;
-  justify-content: center;
 }
 .post-image-sm img {
   width: 50%;
@@ -2061,7 +2060,9 @@ button.back-to-top {
 .media-post {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+}
+.media-post li {
+  margin-right: 6px;
 }
 .media-post-img {
   display: flex;
@@ -3539,9 +3540,10 @@ hr {
 }
 /*Author information*/
 .author-detail-card {
-  width: 50%;
+  width: 100%;
   border: 1px solid var(--primary-blue);
   box-shadow: rgba(24, 149, 252, 0.35) 0px 3px 8px;
+  margin-bottom: 1rem;
 }
 .author-detail-img-box img {
   width: 100px;
